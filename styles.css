@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap'); /* Importa la fuente Playfair Display de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap'); /* Importa las fuentes Open Sans y Playfair Display de Google Fonts */
+
+:root { /* Define variables globales CSS */
+  color-scheme: light dark; /* Permite soporte para temas claro/oscuro */
+  --color-background: rgb(19, 19, 19); /* Color de fondo principal */
+  --color-background-light: rgb(39, 39, 39); /* Color de fondo secundario */
+  --color-primary: #FFBF00; /* Color primario (amarillo) */
+  --color-primary-dark: #E2A900; /* Color primario oscuro */
+  --background-gradient: radial-gradient(ellipse 80% 80% at 50% -20%, #ffbf0030, rgba(255, 255, 255, 0)); /* Gradiente de fondo */
+  --primary-gradient: linear-gradient(to bottom, #FFBF00 0%, #E2A900 100%); /* Gradiente para botones primarios */
+}
+
+* { /* Aplica a todos los elementos */
+  box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+  margin: 0; /* Elimina márgenes por defecto */
+  padding: 0; /* Elimina relleno por defecto */
+}
+
+body {
+  background: var(--background-gradient); /* Usa el gradiente de fondo */
+  font-family: 'Open Sans', sans-serif; /* Fuente principal */
+  display: flex; /* Usa flexbox para el layout */
+  flex-direction: column; /* Apila los hijos en columna */
+  min-height: 100vh; /* Altura mínima de la ventana */
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif; /* Fuente especial para títulos */
+}
+
+a {
+  text-decoration: none; /* Quita subrayado de enlaces */
+  color: inherit; /* Hereda el color del texto */
+}
+
+.site-header {
+  padding-top: 24px; /* Espaciado superior */
+  padding-bottom: 24px; /* Espaciado inferior */
+  padding-left: 32px; /* Espaciado izquierdo */
+  padding-right: 32px; /* Espaciado derecho */
+  border-bottom: 1px solid var(--color-background-light); /* Línea inferior */
+}
+
+.nav {
+  display: flex; /* Flexbox para navegación */
+  justify-content: space-between; /* Espacia los elementos */
+  align-items: center; /* Centra verticalmente */
+}
+
+.nav-list {
+  list-style: none; /* Quita viñetas */
+  display: flex; /* Flexbox para la lista */
+  gap: 16px; /* Espacio entre elementos */
+}
+
+.nav-link {
+  font-weight: 500; /* Peso de fuente medio */
+}
+
+.nav-link:hover {
+  text-decoration: underline; /* Subraya al pasar el mouse */
+}
+
+.site-main {
+  flex: 1; /* Ocupa el espacio restante */
+  display: flex; /* Flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  padding: 16px; /* Espaciado interno */
+}
+
+.hero {
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Apila en columna */
+  align-items: center; /* Centra horizontalmente */
+}
+
+.hero h1 {
+  color: var(--color-primary); /* Color amarillo */
+  font-size: 48px; /* Tamaño grande */
+  margin-bottom: 8px; /* Espacio inferior */
+}
+
+.hero p {
+  font-size: 20px; /* Tamaño de texto */
+}
+
+.hero-buttons {
+  margin-top: 16px; /* Espacio superior */
+  list-style: none; /* Quita viñetas */
+  display: flex; /* Flexbox */
+  justify-content: center; /* Centra horizontalmente */
+}
+
+.button {
+  border: none; /* Sin borde */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 12px 24px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  font-weight: 600; /* Fuente en negrita */
+  cursor: pointer; /* Cursor de mano */
+}
+
+.button-primary {
+  background: var(--primary-gradient); /* Gradiente amarillo */
+}
+
+.button-primary:hover {
+  background-color: var(--color-primary-dark); /* Color más oscuro al pasar el mouse */
+}
+
+.form-section {
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Apila en columna */
+  align-items: center; /* Centra horizontalmente */
+  gap: 16px /* Espacio entre elementos */
+}
+
+.form-register {
+  width: 400px; /* Ancho fijo */
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Apila en columna */
+  gap: 12px; /* Espacio entre campos */
+}
+
+.info {
+  max-width: 700px; /* Ancho máximo */
+  margin: 32px auto; /* Centra y agrega margen */
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Apila en columna */
+  align-items: flex-start; /* Alinea a la izquierda */
+  gap: 24px; /* Espacio entre elementos */
+  background: var(--color-background-light); /* Fondo oscuro */
+  padding: 32px 40px; /* Espaciado interno */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 2px 16px rgba(0,0,0,0.12); /* Sombra */
+}
+
+.info h1, .info h2, .info h3 {
+  text-align: left; /* Alinea a la izquierda */
+  width: 100%; /* Ocupa todo el ancho */
+  margin-bottom: 8px; /* Espacio inferior */
+}
+
+.info ul, .info p {
+  text-align: left; /* Alinea a la izquierda */
+  width: 100%; /* Ocupa todo el ancho */
+  margin-bottom: 8px; /* Espacio inferior */
+}
+
+.info ul {
+  padding-left: 24px; /* Sangría para listas */
+}
+
+.profile {
+  width: 100%; /* Ocupa todo el ancho */
+  max-width: 800px; /* Ancho máximo */
+  display: flex; /* Flexbox */
+  align-items: center; /* Centra horizontalmente */
+  flex-direction: column; /* Apila en columna */
+  gap: 16px; /* Espacio entre elementos */
+}
+
+.profile-header {
+  width: 100%; /* Ocupa todo el ancho */
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Apila en columna */
+  align-items: center; /* Centra horizontalmente */
+  gap: 16px; /* Espacio entre elementos */
+}
+
+.profile-info {
+  text-align: center; /* Centra el texto */
+}
+
+.profile-header img {
+  border-radius: 50%; /* Imagen circular */
+  width: 120px; /* Ancho fijo */
+  height: 120px; /* Alto fijo */
+}
+
+.profile-transactions {
+  width: 100%; /* Ocupa todo el ancho */
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Apila en columna */
+  gap: 16px; /* Espacio entre elementos */
+}
+
+table {
+  width: 100%; /* Ocupa todo el ancho */
+  border-collapse: collapse; /* Quita espacios entre celdas */
+  background-color: var(--color-background-light); /* Fondo oscuro */
+  overflow: hidden; /* Oculta desbordes */
+}
+
+th {
+  padding: 12px 16px; /* Espaciado interno */
+  text-align: left; /* Alinea a la izquierda */
+}
+
+td {
+  padding: 12px 16px; /* Espaciado interno */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Línea inferior tenue */
+}
+
+tbody tr:last-child td {
+  border-bottom: none; /* Quita línea en la última fila */
+}
+
+input {
+  padding: 12px; /* Espaciado interno */
+  border: 1px solid var(--color-background-light); /* Borde oscuro */
+  border-radius: 4px; /* Bordes redondeados */
+  background-color: var(--color-background); /* Fondo principal */
+  color: white; /* Texto blanco */
+}
+
+input:focus {
+  outline: none; /* Quita el contorno azul */
+  border-color: var(--color-primary); /* Borde amarillo al enfocar */
+}
+
+footer {
+  display: flex; /* Flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  padding: 16px; /* Espaciado interno */
+}
+
+.ruleta-container {
+  display: flex; /* Flexbox */
+  gap: 40px; /* Espacio entre elementos */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: flex-start; /* Alinea arriba */
+  margin-bottom: 32px; /* Espacio inferior */
+  width: 100%; /* Ocupa todo el ancho */
+  max-width: 1100px; /* Ancho máximo */
+}
+
+.ruleta-juego {
+  background: var(--color-background-light); /* Fondo oscuro */
+  padding: 24px 32px; /* Espaciado interno */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10); /* Sombra */
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Apila en columna */
+  align-items: center; /* Centra horizontalmente */
+}
+
+.ruleta-info {
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Apila en columna */
+  gap: 20px; /* Espacio entre elementos */
+  min-width: 260px; /* Ancho mínimo */
+  max-width: 320px; /* Ancho máximo */
+}
+
+.info-box {
+  background: #232323; /* Fondo gris oscuro */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 16px 20px; /* Espaciado interno */
+  box-shadow: 0 1px 8px rgba(0,0,0,0.08); /* Sombra */
+}
+
+.info-box h2 {
+  font-size: 20px; /* Tamaño de fuente */
+  margin-bottom: 8px; /* Espacio inferior */
+}
+
+#ganadores {
+  list-style: none; /* Quita viñetas */
+  padding-left: 0; /* Sin sangría */
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Apila en columna */
+  gap: 4px; /* Espacio entre elementos */
+}
+
+.numero-rojo { color: #ff4d4d; font-weight: bold; } /* Números rojos */
+.numero-negro { color: #222; font-weight: bold; } /* Números negros */
+.numero-verde { color: #00c853; font-weight: bold; } /* Números verdes */
+
+.historial-apuestas {
+  width: 100%; /* Ocupa todo el ancho */
+  max-width: 1100px; /* Ancho máximo */
+  margin: 0 auto 32px auto; /* Centra y agrega margen inferior */
+  background: var(--color-background-light); /* Fondo oscuro */
+  border-radius: 12px; /* Bordes redondeados */
+  padding: 24px 32px; /* Espaciado interno */
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10); /* Sombra */
+}
+
+.historial-apuestas h2 {
+  margin-bottom: 16px; /* Espacio inferior */
+}
+
+.ganancia { color: #00c853; font-weight: bold; } /* Texto verde para ganancias */
+.perdida { color: #ff4d4d; font-weight: bold; } /* Texto rojo para pérdidas */
+
+@media (max-width: 900px) { /* Estilos responsivos para pantallas pequeñas */
+  .ruleta-container {
+    flex-direction: column; /* Apila en columna */
+    align-items: center; /* Centra horizontalmente */
+    gap: 24px; /* Espacio entre elementos */
+  }
+  .ruleta-info {
+    width: 100%; /* Ocupa todo el ancho */
+    max-width: 100%; /* Sin límite de ancho */
+  }
+  .historial-apuestas {
+    padding: 16px 8px; /* Menos espaciado */
+  }
+}
+
+.imagen-ruleta {
+  width: 300px; /* Ancho fijo */
+  height: 300px; /* Alto fijo */
+  border-radius: 50%; /* Imagen circular */
+}
